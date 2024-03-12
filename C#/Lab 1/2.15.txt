@@ -1,0 +1,33 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введіть тризначне число:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        if (number < 100 || number > 999)
+        {
+            Console.WriteLine("Введіть коректне тризначне число.");
+        }
+        else
+        {
+            int thirdDigit = number % 10; // отримуємо останню цифру
+            int secondDigit = (number / 10) % 10; // отримуємо другу цифру
+
+            if (secondDigit > thirdDigit)
+            {
+                Console.WriteLine("Друга цифра більше за останню.");
+            }
+            else if (secondDigit < thirdDigit)
+            {
+                Console.WriteLine("Остання цифра більше за другу.");
+            }
+            else
+            {
+                Console.WriteLine("Друга і остання цифри рівні.");
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введіть перше дійсне число:");
+        double number1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Введіть друге дійсне число:");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+
+        double result = SquareOfProduct(number1, number2);
+
+        Console.WriteLine($"Квадрат добутку {number1} і {number2} дорівнює {result}");
+    }
+
+    static double SquareOfProduct(double num1, double num2)
+    {
+        double product = num1 * num2;
+        double square = Math.Pow(product, 2);
+        return square;
+    }
+}

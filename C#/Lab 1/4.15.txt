@@ -1,0 +1,46 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введіть вік чоловіка:");
+        int age = Convert.ToInt32(Console.ReadLine());
+
+        string ageCategory = DetermineAgeCategory(age);
+
+        Console.WriteLine($"Вікова категорія: {ageCategory}");
+    }
+
+    static string DetermineAgeCategory(int age)
+    {
+        if (age < 0)
+        {
+            return "Введіть коректний вік.";
+        }
+        else if (age < 1)
+        {
+            return "Немовля";
+        }
+        else if (age <= 11)
+        {
+            return "Дитина";
+        }
+        else if (age <= 15)
+        {
+            return "Підліток";
+        }
+        else if (age <= 25)
+        {
+            return "Юнак";
+        }
+        else if (age <= 70)
+        {
+            return "Чоловік";
+        }
+        else
+        {
+            return "Старий";
+        }
+    }
+}

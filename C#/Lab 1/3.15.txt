@@ -1,0 +1,39 @@
+using System;
+
+namespace ЗаштрихованаОбласть
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Вводимо координати точки
+            Console.WriteLine("Введіть координату x:");
+            double x = double.Parse(Console.ReadLine());
+            Console.WriteLine("Введіть координату y:");
+            double y = double.Parse(Console.ReadLine());
+
+            // Перевіряємо, чи лежить точка всередині кола
+            bool всерединіКола = (x * x + y * y) <= 4;
+
+            // Перевіряємо, чи лежить точка вище лінії y = -x
+            bool вищеЛінії = y >= -x;
+
+            // Перевіряємо, чи лежить точка на межі
+            bool наМежі = (всерединіКола && !вищеЛінії) || (!всерединіКола && вищеЛінії);
+
+            // Виводимо результат
+            if (наМежі)
+            {
+                Console.WriteLine("На межі");
+            }
+            else if (всерединіКола)
+            {
+                Console.WriteLine("Так");
+            }
+            else
+            {
+                Console.WriteLine("Ні");
+            }
+        }
+    }
+}

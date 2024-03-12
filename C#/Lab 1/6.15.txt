@@ -1,0 +1,26 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Введіть ціле значення n:");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Введіть ціле значення m:");
+        int m = Convert.ToInt32(Console.ReadLine());
+
+        double result = CalculateExpression(n, m);
+
+        Console.WriteLine($"Результат виразу: {result}");
+    }
+
+    static double CalculateExpression(int n, int m)
+    {
+        double numerator = 5.0 / (n + Math.Pow(m, 2));
+        double denominator = (m + n) + Math.Pow(n, 2);
+        double result = numerator / denominator;
+
+        return result;
+    }
+}
